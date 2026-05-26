@@ -1,0 +1,55 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  overflow: hidden;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+body.audio-ready { cursor: none; }
+
+#clock {
+  font-family: ui-monospace, "Cascadia Mono", Consolas, "Courier New", monospace;
+  font-variant-numeric: tabular-nums;
+  font-weight: 900;
+  font-size: 70vh;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  text-align: center;
+  user-select: none;
+}
+#clock.running,
+#clock.stopped { color: #E63946; }
+
+#audio-unlock {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  cursor: pointer;
+}
+#audio-unlock.hidden { display: none; }
+#audio-unlock .msg {
+  color: #FFD400;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.4;
+}
+#audio-unlock .sub {
+  display: block;
+  margin-top: 12px;
+  font-size: 18px;
+  font-weight: 400;
+  color: #888;
+}

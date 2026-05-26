@@ -1,0 +1,108 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #1a1a1a;
+  color: #eee;
+  font-family: -apple-system, "Segoe UI", system-ui, sans-serif;
+  user-select: none;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+#mini {
+  font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
+  font-variant-numeric: tabular-nums;
+  font-weight: 900;
+  font-size: 96px;
+  line-height: 1;
+  text-align: center;
+  padding: 12px 0;
+  border-radius: 8px;
+  background: #000;
+  letter-spacing: -0.04em;
+}
+#mini.running,
+#mini.stopped { color: #E63946; }
+
+#buttons {
+  display: flex;
+  gap: 8px;
+}
+#buttons button {
+  flex: 1;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 18px 0;
+  background: #2a2a2a;
+  color: #eee;
+  border: 1px solid #444;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.08s, opacity 0.08s;
+}
+#buttons button:hover { background: #333; }
+#buttons button:active { background: #444; }
+#buttons button.dim { opacity: 0.4; }
+
+#set-row {
+  display: flex;
+  gap: 8px;
+}
+#set-input {
+  flex: 1;
+  font-size: 18px;
+  padding: 10px;
+  background: #2a2a2a;
+  color: #eee;
+  border: 1px solid #444;
+  border-radius: 6px;
+  text-align: center;
+}
+#set-input:focus {
+  outline: none;
+  border-color: #FFD400;
+}
+#set-row button {
+  font-size: 16px;
+  padding: 0 18px;
+  background: #2a2a2a;
+  color: #eee;
+  border: 1px solid #444;
+  border-radius: 6px;
+  cursor: pointer;
+}
+#set-row button:hover { background: #333; }
+
+#reopen {
+  font-size: 14px;
+  padding: 10px;
+  background: #E63946;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 700;
+}
+#reopen.hidden { display: none; }
+
+#hint {
+  font-size: 12px;
+  color: #888;
+  text-align: center;
+  margin-top: auto;
+  line-height: 1.8;
+}
+#hint kbd {
+  background: #333;
+  border: 1px solid #555;
+  border-radius: 3px;
+  padding: 1px 6px;
+  font-family: ui-monospace, monospace;
+  font-size: 11px;
+  color: #ddd;
+}

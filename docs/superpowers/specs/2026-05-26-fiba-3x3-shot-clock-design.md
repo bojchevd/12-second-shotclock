@@ -102,7 +102,7 @@ State, commands, tick effects, and the expiry/hold semantics are unchanged from 
 - **Start** when stopped with time remaining → captures `baselineAt = clock.now()`, runs.
 - **Start** when already running → no-op.
 - **Stop** when running → freezes the current remaining value.
-- **Reset** → 12.0, stopped, clears `expiredAt` (the "new possession" mid-run action).
+- **Reset** → 12.0 AND auto-starts the countdown (the "new possession" mid-run action — one tap and the new 12 is already ticking). Note this differs from the auto-reset after expiry in `tick()`, which stays stopped (the operator hits Start when the next possession actually begins).
 - **SetSeconds(s)** → clamp to `[0, 12]`, round to 0.1, stopped, clears `expiredAt`.
 - **tick** → if running and remaining hit 0: emit `'buzzer'` once, stop, set `expiredAt`. If `expiredAt` is set and `clock.now() - expiredAt >= 1200`: auto-reset to 12.0 (stays stopped).
 

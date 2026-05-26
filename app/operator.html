@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Shot Clock — Operator</title>
+    <link rel="stylesheet" href="operator/operator.css">
+  </head>
+  <body>
+    <div id="mini" class="stopped">12</div>
+    <div id="buttons">
+      <button id="start">START</button>
+      <button id="stop">STOP</button>
+      <button id="reset">RESET</button>
+    </div>
+    <div id="set-row">
+      <input id="set-input" type="text" inputmode="decimal" maxlength="4" placeholder="0–12 s">
+      <button id="set">Set</button>
+    </div>
+    <button id="reopen" class="hidden">Reopen scoreboard window</button>
+    <div id="hint">
+      <kbd>Space</kbd> Start/Stop &nbsp;·&nbsp;
+      <kbd>R</kbd> Reset &nbsp;·&nbsp;
+      <kbd>0</kbd>–<kbd>9</kbd> Set seconds &nbsp;·&nbsp;
+      <kbd>F11</kbd> on scoreboard = fullscreen
+    </div>
+    <script type="module" src="operator/operator.js"></script>
+  </body>
+</html>
