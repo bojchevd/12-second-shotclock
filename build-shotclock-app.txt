@@ -1,0 +1,48 @@
+### BIG TASK - I need to build a FIBA 3x3 Basketball Scoreboard
+
+Frontend (public scoreboard) to show as window on second screen (via extend display)
+Operator controls
+
+Features needed:
+# Shot Clock: 12-second countdown with tenths displayed in final 5 seconds
+# Automatic Buzzer: Shot clock expiry triggers buzzer exactly once
+
+## Scoreboard Display (Read-Only, Fullscreen)
+High-contrast FIBA-inspired design (black background)
+Large typography for easy visibility
+Yellow shot clock display (FIBA standard)
+Red shot clock when paused
+
+## Control Window (Operator Interface)
+
+Start/Stop/Reset button
+Shot clock manual set (edit)(0-12 seconds)
+
+## Extra
+- Accurate timer system
+- Automatic posession-end signal at 00.0 with SIREN buzzer
+- Both windows stay in sync (< 50ms latency)
+
+## Usage guide
+
+Open the application (both windows will launch)
+
+# During Play - Shot Clock Operations:
+
+- Click START to begin 12-second countdown
+- Click STOP to pause
+- Click RESET to return to 12.0
+- Enter custom value (0-12) in input field to set manually
+
+# Technical details 
+- localhost only, single machine
+- High-resolution monotonic clock (Instant::now())
+- Authoritative state
+
+# Shot Clock:
+
+if (seconds > 5.0) {
+  return Math.ceil(seconds).toString(); // "12", "11", ..., "6"
+} else {
+  return seconds.toFixed(1);            // "5.0", "4.9", ..., "0.0"
+}
